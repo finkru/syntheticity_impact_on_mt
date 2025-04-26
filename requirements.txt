@@ -49,6 +49,7 @@ parso==0.8.4
 pexpect==4.9.0
 platformdirs==4.3.6
 portalocker==3.1.1
+progressbar==2.5
 prompt_toolkit==3.0.50
 psutil==7.0.0
 ptyprocess==0.7.0
@@ -63,6 +64,7 @@ requests==2.32.3
 sacrebleu==2.5.1
 sacremoses==0.1.1
 safetensors==0.5.3
+scipy==1.15.2
 sentencepiece==0.2.0
 setuptools==76.1.0
 six==1.17.0
@@ -74,6 +76,7 @@ torch==2.6.0
 tornado==6.4.2
 tqdm==4.67.1
 traitlets==5.14.3
+trans==2.1.0
 transformers==4.49.0
 triton==3.2.0
 typing_extensions==4.12.2

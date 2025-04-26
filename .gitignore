@@ -172,3 +172,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Ignore data subfolders content
+data/seg_input/*
+data/seg_output/*
