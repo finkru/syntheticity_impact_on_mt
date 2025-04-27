@@ -176,3 +176,4 @@ cython_debug/
 # Ignore data subfolders content
 data/seg_input/*
 data/seg_output/*
+data/tra_output/*
