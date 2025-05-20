@@ -329,3 +329,36 @@ class TextEvaluator(Text):
         df['targets'] = ref_sentences
         
         return df
+    
+    def evaluate_with_comet(
+        self,
+        model_path: str = "wmt20-comet-qe-da/checkpoints/model.ckpt",
+        batch_size: int = 8,
+        gpus: int | None = 0,
+    ) -> pd.DataFrame:
+        
+        from comet import download_model, load_from_checkpoint
+
+        model_path = download_model("Unbabel/wmt20-comet-qe-da")
+        model = load_from_checkpoint(model_path)
+
+        
+        df = self.evaluate()      # <-- gives us “targets” column with refs
+
+        
+        data = [
+            {
+                "src": row["original sentence"],
+                "mt":  row["translated sentence"],
+                "ref": row["targets"],           # reference from evaluate()
+            }
+            for _, row in df.iterrows()
+        ]
+
+        
+        scores = model.predict(data, batch_size=batch_size, gpus=gpus, progress_bar=False)
+
+        
+        df["comet_score"] = scores['scores']
+        return df
+
