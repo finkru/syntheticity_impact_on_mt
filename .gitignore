@@ -177,3 +177,6 @@ cython_debug/
 data/seg_input/*
 data/seg_output/*
 data/tra_output/*
+data/output/*
+data/targets/*
+data/input/*
