@@ -180,3 +180,5 @@ data/tra_output/*
 data/output/*
 data/targets/*
 data/input/*
+.vscode/
+
